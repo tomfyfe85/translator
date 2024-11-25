@@ -12,3 +12,6 @@ Route::get("/questions/{id}", function($id){
     $text = $question["question_text"];
     return json_encode($text);
 });
+
+Route::post("/questions", function(){
+});
