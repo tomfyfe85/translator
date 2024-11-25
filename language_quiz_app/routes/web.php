@@ -16,7 +16,14 @@ Route::get("/questions/{id}", function($id){
 });
 
 Route::post("/questions", function(Request $request){
-    if($request["question"] == 1 and $request["answer"] == "\"Bonjour\""){
+    $question_number = $request["question"];
+    $answer = $request["answer"];
+
+    $question = Question::find($question_number);
+
+    if($question["answer_text"] == $answer){
         return "True";
     }
+    return "False";
+
 });
