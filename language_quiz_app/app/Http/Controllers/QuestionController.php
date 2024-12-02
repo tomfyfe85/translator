@@ -28,9 +28,6 @@ class QuestionController extends Controller
     
         $question = Question::find($question_number);
     
-        if($question["answer_text"] == $answer){
-            return "True";
-        }
-        return "False";
+        return $question["answer_text"] === $answer ? "True" :"False"; 
     }
 }
